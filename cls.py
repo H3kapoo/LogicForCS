@@ -101,7 +101,6 @@ class ClauseSet:
 
 
 c = ClauseSet(int(input("Number of clauses: ")))
-iter_users = int(input("Iterations: "))
 c.SetClauses()
 length = len(c.clauses)
 
