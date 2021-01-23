@@ -1,20 +1,8 @@
-
 # WFF all interpretations and validity check
-# DEPENDS ON: lcs_helper.py
 
-import lcs_helper as lcs
+import lcsHelperFunc as lcs
 
 con = ['!', '^', '|', '-', '>']
-
-
-def prompt():
-    print('# neg !')
-    print('# and ^')
-    print('# or |')
-    print('# imp >')
-    print('# equ -')
-    print()
-
 
 def neg(ipt):
     if ipt == 'T':
@@ -22,13 +10,11 @@ def neg(ipt):
     else:
         return 'T'
 
-
 def and_(ipt1, ipt2):
     if ipt1 == 'T' and ipt2 == 'T':
         return 'T'
     else:
         return 'F'
-
 
 def or_(ipt1, ipt2):
     if ipt1 == 'F' and ipt2 == 'F':
@@ -36,20 +22,17 @@ def or_(ipt1, ipt2):
     else:
         return 'T'
 
-
 def imp(ipt1, ipt2):
     if ipt1 == 'T' and ipt2 == 'F':
         return 'F'
     else:
         return 'T'
 
-
 def equ(ipt1, ipt2):
     if (ipt1 == 'T' and ipt2 == 'T') or (ipt1 == 'F' and ipt2 == 'F'):
         return 'T'
     else:
         return 'F'
-
 
 def boolean(prop, type_):
     if type_ == 1:
@@ -65,7 +48,6 @@ def boolean(prop, type_):
         if prop[2] == '>':
             return imp(prop[1], prop[3])
     return '---'
-
 
 def booleanReplace(p, index, nr):
     print()
@@ -83,7 +65,6 @@ def booleanReplace(p, index, nr):
     print('--->Proposition in boolean form: ', p)
     print()
     return p
-
 
 def analyze(prop):
     op = 0
@@ -125,7 +106,6 @@ def analyze(prop):
     if valid_flag:
         analyze(prop)
 
-
 def GenerateBool(nr):
     l = []
     spots = 2**nr
@@ -153,15 +133,11 @@ def GenerateBool(nr):
 
     return l
 
-
 # Start
-prompt()
 prop = input("Input a proposition: ")
 nr = int(input("Number of unique atoms: "))
 possible_bool = GenerateBool(nr)
-
 answer_pool = []
-
 
 for i in range(0, 2 ** nr):
     prop_replaced = booleanReplace(prop, i, nr)

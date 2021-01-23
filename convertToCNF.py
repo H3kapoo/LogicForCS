@@ -1,7 +1,5 @@
 # CONVERTS FROM NNF TO CNF
-# DEPENDS ON: n.py
-from n import *
-
+from convertToNNF import toNNF,GetDict,Assemble,ToString
 
 def CanPushFormula(Dict_):
     ctr = False
@@ -35,10 +33,8 @@ def CanPushFormula(Dict_):
                             Dict_[keys].append(')')
 
             if Dict_[keys][2] == '|':
-                #print('key ', keys)
                 right = Dict_[keys][3]
-                # print(right)
-                #print('s ', Dict_[right])
+
                 if len(Dict_[right]) == 5:
                     if Dict_[right][2] == '^':
                         ctr = True
@@ -63,7 +59,6 @@ def CanPushFormula(Dict_):
 
     return ctr
 
-
 inp = input('Input proposition to convert to CNF: ')
 CNF = toNNF(inp)
 
@@ -73,6 +68,5 @@ while CanPushFormula(Dict[0]):
     Final = Assemble(Dict[0], Dict[1], Dict[2], 'none')
     CNF = ToString(Final)
     Dict = GetDict(CNF)
-
 
 print('Proposition in CNF:', CNF)

@@ -1,6 +1,4 @@
-
-# CLAUSE SET SOLVER (VERY SLOW IF SATISF)
-
+# CLAUSE SET SOLVER (VERY SLOW OR NON TERMINATING IF SATISF)
 
 class Clause:
     def __init__(self, id_, form, createdBy):
@@ -21,7 +19,6 @@ class Clause:
     def GetCreator(self):
         return self.createdBy
 
-
 class ClauseSet:
     def __init__(self, clausesNo):
         self.clauseNo = clausesNo
@@ -32,7 +29,7 @@ class ClauseSet:
 
     def SetClauses(self):
         for i in range(0, self.clauseNo):
-            form = input("Clause: ")
+            form = input(f"Clause {i+1}: ")
             tupl = 'ROOT'
             self.clauses.append(Clause(self.id_, form.split(','), tupl))
             self.id_ += 1
@@ -90,7 +87,6 @@ class ClauseSet:
                         if not self.SolveClause_Contains(form):
                             self.clauses.append(
                                 Clause(self.id_, form, (id1, id2)))
-                            # print(len(c.clauses))
                             self.id_ += 1
                         C1.add(e)
                         C2.add(f)
@@ -98,7 +94,6 @@ class ClauseSet:
     def PrintClauses(self):
         for c in self.clauses:
             print(c.GetForm(), " ", c.GetID(), "   ", c.GetCreator())
-
 
 c = ClauseSet(int(input("Number of clauses: ")))
 c.SetClauses()
@@ -113,10 +108,8 @@ while not c.FOUND:
                     c.SolveClause(c.clauses[i], c.clauses[j])
                     c.resolved.append((i, j))
                     c.resolved.append((j, i))
-                    # print(length)
 
     length = len(c.clauses)
 
 print()
-
 c.PrintClauses()

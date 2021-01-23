@@ -6,7 +6,6 @@ def GetListForm(Prop):
         ListOfElements.append(Element)
     return ListOfElements
 
-
 def GetAtomsFromList(Prop):
     UniqueAtoms = set()
     for Atom in Prop:
@@ -14,10 +13,8 @@ def GetAtomsFromList(Prop):
             UniqueAtoms.add(Atom)
     return list(UniqueAtoms)
 
-
 def GetSubPropNumberID(SubProps):
     return len(SubProps)
-
 
 def ReplaceAtoms(Prop, Atoms):
     IDs = {}
@@ -29,7 +26,6 @@ def ReplaceAtoms(Prop, Atoms):
         if (Prop[i]).isalpha():
             Prop[i] = IDs[Prop[i]]
     return Prop
-
 
 def StillHasTwoParanthesis(Prop):
     NoOfParanthesisL = 0
@@ -47,7 +43,6 @@ def StillHasTwoParanthesis(Prop):
     if NoOfParanthesisL == NoOfParanthesisR:
         return 'Pass'
 
-
 def GetParanthesisLoc(Prop):
     OpenParanthesis = -1
     ClosParanthesis = -1
@@ -61,7 +56,6 @@ def GetParanthesisLoc(Prop):
             break
     return [OpenParanthesis, ClosParanthesis]
 
-
 def MakeSubPropFrom(Prop, From, To):
     SubProp = []
     Range = To - From
@@ -69,13 +63,11 @@ def MakeSubPropFrom(Prop, From, To):
         SubProp.append(Prop[i])
     return SubProp
 
-
 def SubstractSubProp(Prop, From, To):
     PropCopy = Prop.copy()
     for i in range(To, From-1, -1):
         PropCopy.pop(i)
     return PropCopy
-
 
 def PropIsFinished(Prop):
     if (str(Prop[0])).isnumeric() and len(Prop) == 1:
@@ -83,7 +75,6 @@ def PropIsFinished(Prop):
     if Prop[0] == '(' and (str(Prop[1])).isnumeric() and Prop[2] == ')':
         return 'Finished'
     return 'NotFinished'
-
 
 def CheckForNegation(Prop):
     Found = 'NotFound'
@@ -101,7 +92,6 @@ def CheckForNegation(Prop):
             SubProp.append(')')
             break
     return [Found, SubProp, [IndexStart, IndexStart+1]]
-
 
 def CheckForAndOr(Prop):
     Found = 'NotFound'
@@ -121,7 +111,6 @@ def CheckForAndOr(Prop):
             break
     return [Found, SubProp, [IndexStart-1, IndexStart+1]]
 
-
 def CheckForImplication(Prop):
     Found = 'NotFound'
     IndexStart = 0
@@ -139,7 +128,6 @@ def CheckForImplication(Prop):
             SubProp.append(')')
             break
     return [Found, SubProp, [IndexStart-1, IndexStart+1]]
-
 
 def CheckForEquivalence(Prop):
     Found = 'NotFound'
@@ -159,7 +147,6 @@ def CheckForEquivalence(Prop):
             break
     return [Found, SubProp, [IndexStart-1, IndexStart+1]]
 
-
 def GetHighestAtomID(SubProp, NoOfAtoms):
     HighestID = 0
     for Element in SubProp:
@@ -167,7 +154,6 @@ def GetHighestAtomID(SubProp, NoOfAtoms):
             if Element > HighestID and Element < NoOfAtoms:
                 HighestID = Element
     return HighestID
-
 
 def FinalReplace(Final, SubProps):
     while StillHasToReplace(Final):
@@ -185,7 +171,6 @@ def FinalReplace(Final, SubProps):
                 if i == len(Final):
                     break
     return Final
-
 
 def BreakListResolveChain(BreakListIDs, SubProps, NoOfAtoms, SubPropNumberID):
     SmallSubPropsID = SubPropNumberID
@@ -224,14 +209,11 @@ def BreakListResolveChain(BreakListIDs, SubProps, NoOfAtoms, SubPropNumberID):
                 SubProp = SubstractSubProp(SubProp, SubLoc[0], SubLoc[1])
                 SubProp.insert(SubLoc[0], SmallSubPropsID)
                 SmallSubPropsID += 1
-            # print('ok')
         SmallSubProps[SmallSubPropsID] = SmallSubPropsID-1
-        #print('From Break: ', SmallSubProps)
 
         SubPr = Reconstruct(SmallSubProps, SubProps,
                             SmallSubPropsID)
         SubProps[ID] = SubPr
-
 
 def StillHasToReplace(Prop):
     for Element in Prop:
@@ -239,12 +221,12 @@ def StillHasToReplace(Prop):
             return True
     return False
 
-
 def Reconstruct(SmallSubProps, SubProps, ID):
     ReconstructedProp = [SmallSubProps[ID]]
     SmallSubProps.pop(ID)
     SmallSubPropsLen = len(SmallSubProps)
     while StillHasToReplace(ReconstructedProp):
+       
         i = 0
 
         while i < len(ReconstructedProp):
@@ -264,24 +246,21 @@ def Reconstruct(SmallSubProps, SubProps, ID):
                 i += 1
                 if i == len(ReconstructedProp):
                     break
-   # print('Rec: ', ReconstructedProp)
     return ReconstructedProp
 
-
 def ReplaceNoList(Prop, SubProp, i):
+   
     SubPropLen = len(SubProp)
 
     for x in range(0, SubPropLen):
         Prop.insert(i + x, SubProp[x])
     return Prop
 
-
 def ContainsAtoms(SubProp, NoOfAtoms):
     for Element in SubProp:
         if (str(Element)).isnumeric() and Element < NoOfAtoms:
             return 'ContainsAtoms'
     return 'NotContainsAtoms'
-
 
 def PrintChain(Prop):
     Chain = ''

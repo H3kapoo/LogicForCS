@@ -1,8 +1,7 @@
-
 # WFF all interp. table view
 
-from lcs_helper import neg, and_, or_, imp, equ, Prompt
-from lcs_helper import BooleanType, GenerateBool, Analyze, BooleanReplace, Validity, GetAnswerPool
+from lcsHelperFunc import neg, and_, or_, imp, equ, Prompt
+from lcsHelperFunc import BooleanType, GenerateBool, Analyze, BooleanReplace, Validity, GetAnswerPool
 
 # Start
 Prompt()

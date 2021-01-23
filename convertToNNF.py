@@ -1,27 +1,21 @@
 # CONVERTS A RELAXED/STRONG FORM PROPOSITION TO NNF
-# DEPENDS ON: rel.py
-from rel import Transform
-
+from relaxedToStrong import Transform
 
 def Extract(source, st, en):
-    #print('source is:' ,source)
     lis = []
     for i in range(st, en + 1):
         lis.append(source[i])
     return lis
-
 
 def ReplaceWith(source, st, en, wit):
     for i in range(en, st - 1, -1):
         source.pop(i)
     source.insert(st, wit)
 
-
 def Push(prop, ind, sub_prop):
     prop.pop(ind)
     for i in range(0, len(sub_prop)):
         prop.insert(ind + i, sub_prop[i])
-
 
 def ResolveDictNeg(dict_):
 
@@ -32,9 +26,7 @@ def ResolveDictNeg(dict_):
                 d = int(dict_[keys][2])
                 Push(dict_[keys], 2, dict_[d])
 
-    # for keys in range(len(dict_)-1,-1,-1):
     for keys in dict_:  # [:-1] ?
-        #print('key ',keys)
         if len(dict_[keys]) > 4:
             if dict_[keys][2] == '(':
                 if dict_[keys][3] == '!':
@@ -58,7 +50,6 @@ def ResolveDictNeg(dict_):
                         dict_[keys].append(q)
                         dict_[keys].append(')')
                         dict_[keys].append(')')
-                        # (!(P^Q)) -> ((!P)|(!Q))
                     if dict_[keys][4] == '|':
                         p = dict_[keys][3]
                         q = dict_[keys][5]
@@ -74,15 +65,11 @@ def ResolveDictNeg(dict_):
                         dict_[keys].append(q)
                         dict_[keys].append(')')
                         dict_[keys].append(')')
-                        # (!(P|Q)) -> ((!P)^(!Q))
-
 
 def ResolveDictEqu(dict_):
     for keys in range(len(dict_)-1, -1, -1):
-        # for keys in dict_:
         if len(dict_[keys]) == 5:
             if dict_[keys][2] == '-':
-                # (P-Q) -> ((P>Q)^(Q>P))
                 p = int(dict_[keys][1])
                 q = int(dict_[keys][3])
                 dict_[keys].clear()
@@ -100,13 +87,10 @@ def ResolveDictEqu(dict_):
                 dict_[keys].append(')')
                 dict_[keys].append(')')
 
-
 def ResolveDictImp(dict_):
     for keys in range(len(dict_)-1, -1, -1):
-        # for keys in dict_:
         if len(dict_[keys]) == 5:
             if dict_[keys][2] == '>':
-                # (P>Q) -> ((!P)|Q)
                 p = int(dict_[keys][1])
                 q = int(dict_[keys][3])
                 dict_[keys].clear()
@@ -118,7 +102,6 @@ def ResolveDictImp(dict_):
                 dict_[keys].append('|')
                 dict_[keys].append(q)
                 dict_[keys].append(')')
-
 
 def GetDict(prop):
     prop_list = []
@@ -137,7 +120,6 @@ def GetDict(prop):
 
     for i in range(0, atoms_no):
         Dict[i] = atoms_set[i]
-        #print('atoms ', i )
 
     for i in range(0, atoms_no):
         for j in range(0, len(prop_list)):
@@ -161,10 +143,7 @@ def GetDict(prop):
         Dict[atoms_no_copy] = extracted
         atoms_no_copy += 1
 
-    # for keys, values in Dict.items():
-        # print(keys, ' ', values) ------------------------------------
     return (Dict, atoms_no_copy-1, atoms_no)
-
 
 def Assemble(dict_, elem_no, atoms_no, type_):
     if type_ == 'neg':
@@ -191,9 +170,7 @@ def Assemble(dict_, elem_no, atoms_no, type_):
         if not found:
             elem_no -= 1
 
-    # print(final) #------------------------------------------------
     return final
-
 
 def hasToPushNeg(final):
     for i in range(0, len(final) - 1):
@@ -201,20 +178,17 @@ def hasToPushNeg(final):
             return True
     return False
 
-
 def hasToPushImp(final):
     for i in range(0, len(final) - 1):
         if final[i] == '>':
             return True
     return False
 
-
 def hasToPushEqu(final):
     for i in range(0, len(final) - 1):
         if final[i] == '-':
             return True
     return False
-
 
 def ToString(final):
     string = ''
@@ -231,29 +205,19 @@ def toNNF(Final):
         Final = Assemble(Dict[0], Dict[1], Dict[2], 'equ')
         Final = ToString(Final)
 
-    # push impl
-    #print('Final after equi: ', Final)
-
     while hasToPushImp(Final):
         Dict = GetDict(Final)
         Final = Assemble(Dict[0], Dict[1], Dict[2], 'imp')
         Final = ToString(Final)
-
-    #print('Final after impli: ', Final)
 
     while hasToPushNeg(Final):
         Dict = GetDict(Final)
         Final = Assemble(Dict[0], Dict[1], Dict[2], 'neg')
         Final = ToString(Final)
 
-    #print('Final after negs: ', Final)
-    # print()
     print('Proposition in NNF:', Final)
     return Final
 
-
-# push equi
-#print('Final original: ', Final)
 if __name__ == "__main__":
      prop = input('Input a proposition to convert to NNF: ')
      toNNF(prop)

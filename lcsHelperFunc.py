@@ -10,8 +10,6 @@ possible_bool = []
 answer_pool = []
 
 # Info Prompt
-
-
 def Prompt():
     print('# neg !')
     print('# and ^')
@@ -21,8 +19,6 @@ def Prompt():
     print()
 
 # Truth Function !
-
-
 def neg(ipt):
     if ipt == 'T':
         return 'F'
@@ -30,8 +26,6 @@ def neg(ipt):
         return 'T'
 
 # Truth Function ^
-
-
 def and_(ipt1, ipt2):
     if ipt1 == 'T' and ipt2 == 'T':
         return 'T'
@@ -39,8 +33,6 @@ def and_(ipt1, ipt2):
         return 'F'
 
 # Truth Function |
-
-
 def or_(ipt1, ipt2):
     if ipt1 == 'F' and ipt2 == 'F':
         return 'F'
@@ -48,8 +40,6 @@ def or_(ipt1, ipt2):
         return 'T'
 
 # Truth Function >
-
-
 def imp(ipt1, ipt2):
     if ipt1 == 'T' and ipt2 == 'F':
         return 'F'
@@ -57,8 +47,6 @@ def imp(ipt1, ipt2):
         return 'T'
 
 # Truth Function -
-
-
 def equ(ipt1, ipt2):
     if (ipt1 == 'T' and ipt2 == 'T') or (ipt1 == 'F' and ipt2 == 'F'):
         return 'T'
@@ -66,8 +54,6 @@ def equ(ipt1, ipt2):
         return 'F'
 
 # Truth result of sub-proposition of type 1 or 2
-
-
 def BooleanType(prop, type_):
     if type_ == 1:
         return neg(prop[2])
@@ -84,7 +70,6 @@ def BooleanType(prop, type_):
     return '---'
 
 # Returns the truth value for the prop of type type_
-
 def booleanFunction(prop, type_):
     if type_ == 1:
         return neg(prop[2])
@@ -102,8 +87,6 @@ def booleanFunction(prop, type_):
 
 
 # Generates all possible combinations of 'nr' unique atoms
-
-
 def GenerateBool(nr):
     nr_atoms = nr
     spots = 2**nr
@@ -132,7 +115,6 @@ def GenerateBool(nr):
     return possible_bool
 
 #Replaces atoms with truth values given at the time of calling
-
 def booleanReplace(p):
     print()
     atoms = set()
@@ -150,8 +132,6 @@ def booleanReplace(p):
     return p
 
 # Replaces atoms with the truth values at 'index' (needs GenerateBool)
-
-
 def BooleanReplace(p, index, nr, possible_bool):
     #print()
     atoms = set()
@@ -165,16 +145,10 @@ def BooleanReplace(p, index, nr, possible_bool):
             if l not in atms:
                 atms.append(l)
             i += 1
-
-    #print()
-    #print('--->Proposition in boolean form: ', p)
-    #print()
     return p
 
 
 # Analyzes the proposition 'p' (is in BooleanForm), appends an (T/F) answer for the pool
-
-
 def Analyze(prop):
     op = 0
     cp = 0
@@ -216,7 +190,6 @@ def Analyze(prop):
         Analyze(prop)
 
 # Analyzes the proposition 'p' (is in BooleanForm),just returns (T/F) no answer_pool appends
-
 def AnalyzeBoolSingleShot(prop):
     op = 0
     cp = 0
@@ -263,19 +236,15 @@ def AnalyzeBoolSingleShot(prop):
         print("Error flag checked.Proposition fails the test.Not a WFF.")
 
 # Get the answer pool
-
-
 def GetAnswerPool():
     return answer_pool
 
 #Reset AnswerPool
-
 def ResetAnswerPool():
     answer_pool.clear()
     return []
 
 # Validity Check
-
 def Validity(answer_pool, mode):
     if len(answer_pool) > 0:
         if(mode == 'default'):
@@ -302,7 +271,6 @@ def Validity(answer_pool, mode):
         print("Error flag checked.Proposition fails the test.Not a WFF.")
 
 # Nice Add-ons
-
 def PrettyPrint():
     print()
 
@@ -326,7 +294,6 @@ def PrettyPrint():
         to_print = '  '
 
 #Analyze non boolean form proposition
-
 def AnalyzeNonBool(prop):
     op = 0
     cp = 0

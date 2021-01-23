@@ -1,11 +1,9 @@
 # CONVERTS A RELAXED FORMULA INTO A STRONG FORM FORMULA
-# DEPENDS ON: rel_helper.py
 
-from rel_helper import GetListForm, GetAtomsFromList, GetSubPropNumberID, ReplaceAtoms
-from rel_helper import StillHasTwoParanthesis, GetParanthesisLoc, MakeSubPropFrom, SubstractSubProp
-from rel_helper import PropIsFinished, CheckForNegation, CheckForAndOr, CheckForImplication, CheckForEquivalence
-from rel_helper import BreakListResolveChain, ContainsAtoms, PrintChain, FinalReplace
-
+from relHelperFunc import GetListForm, GetAtomsFromList, GetSubPropNumberID, ReplaceAtoms
+from relHelperFunc import StillHasTwoParanthesis, GetParanthesisLoc, MakeSubPropFrom, SubstractSubProp
+from relHelperFunc import PropIsFinished, CheckForNegation, CheckForAndOr, CheckForImplication, CheckForEquivalence
+from relHelperFunc import BreakListResolveChain, ContainsAtoms, PrintChain, FinalReplace
 
 def Transform(Prop):
     PropListForm = GetListForm(Prop)
@@ -60,7 +58,6 @@ def Transform(Prop):
                 BreakListIDs.append(SubPropNumberID)
 
             SubPropNumberID += 1
-            # print(PropListForm)
 
         while CheckForImplication(PropListForm)[0] == 'Found':
             SubProps.append(CheckForImplication(PropListForm)[1])
@@ -72,7 +69,6 @@ def Transform(Prop):
                 BreakListIDs.append(SubPropNumberID)
 
             SubPropNumberID += 1
-            # print(PropListForm)
 
         while CheckForEquivalence(PropListForm)[0] == 'Found':
             SubProps.append(CheckForEquivalence(PropListForm)[1])
@@ -84,18 +80,15 @@ def Transform(Prop):
                 BreakListIDs.append(SubPropNumberID)
 
             SubPropNumberID += 1
-            # print(PropListForm)
 
     SubProps.append(SubPropNumberID)
     SubPropNumberID += 1
 
-    BreakListResolveChain(BreakListIDs, SubProps,
-                          NumberOfAtoms, SubPropNumberID)
+    BreakListResolveChain(BreakListIDs, SubProps, NumberOfAtoms, SubPropNumberID)
 
     Result = FinalReplace(SubProps[SubPropNumberID-2], SubProps)
 
     return PrintChain(Result)
-
 
 if __name__ == "__main__":
     inp = input('Enter a WFF in relaxed form: ')

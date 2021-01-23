@@ -1,7 +1,6 @@
 # WFF interp of all subformulas
-# DEPENDS ON: lcs_helper.py
 
-from lcs_helper import Analyze, GenerateBool, Validity, GetAnswerPool, ResetAnswerPool
+from lcsHelperFunc import Analyze, GenerateBool, Validity, GetAnswerPool, ResetAnswerPool
 
 print('Does not check for WFF.Ensure that yourself.')
 prop = input('Input a proposition: ')
@@ -12,7 +11,6 @@ atoms = []
 D = {}
 char_spaging = []
 values = []
-
 
 # extract block
 # extract indexes of all start '(' and end ')' in list l
@@ -52,7 +50,6 @@ for i in range(0, nr):
     for j in range(0, 2**nr):
         x.append(possible_bool[j + (2 ** nr) * i])
     values.append(x)
-
 
 # Construct the sub-formulas from the indexes in list l,put them in props_list,also print them in a row
 props_list = []
