@@ -12,35 +12,21 @@
  ```((A>B)|(!C))``` <br/>
  ```((A-B)^(C|(!A)))>A)```
 #### Programs available
-* ```checkWFF``` - checks if the given formula is a well formed formula
-    - <details>
-      <summary>Click here to see the output</summary>
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
-      </details>
+* ```checkWFF``` - checks if the given formula is a well formed formula 
+<details>
+<summary>Click here to see the output</summary>
+![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+</details>
       
 * ```interpTruth``` - computes truth value of WFF under a specific interpretation
-    - <details>
-      <summary>Click here to see the output</summary>
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
-      </details>
-      
+
 * ```interpsAndValidity``` - computes truth value of WFF under all interpretations & validity of WFF
-    - <details>
-      <summary>Click here to see the output</summary>
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
-      </details>
+
       
 * ```interpsAndValidity2``` - same as ```interpsAndValidity``` but table view
-    - <details>
-      <summary>Click here to see the output</summary>
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
-      </details>
+
       
 * ```subfInterpsAndValidity``` - computes interpretation for all truth values of all subformulas of a WFF
-    - <details>
-      <summary>Click here to see the output</summary>
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
-      </details>
       
 ###### Node: programs above depend on ```lcsHelperFunc.py```
 
