@@ -16,22 +16,51 @@
     
     - <details>
 
-      <summary>Click here to see the output</summary>
+      <summary>Example output here</summary>
 
       ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
 
       </details>
       
 * ```interpTruth``` - computes truth value of WFF under a specific interpretation
+    
+    - <details>
 
-* ```interpsAndValidity``` - computes truth value of WFF under all interpretations & validity of WFF
+      <summary>Example output here</summary>
 
+      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+
+      </details>
+      
+* ```interpsAndValidity``` - computes truth value of WFF under all interpretations & validity of WFF    
+    - <details>
+
+      <summary>Example output here</summary>
+
+      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+
+      </details>
       
 * ```interpsAndValidity2``` - same as ```interpsAndValidity``` but table view
+    
+    - <details>
 
+      <summary>Example output here</summary>
+
+      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+
+      </details>
       
 * ```subfInterpsAndValidity``` - computes interpretation for all truth values of all subformulas of a WFF
-      
+    
+    - <details>
+
+      <summary>Example output here</summary>
+
+      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+
+      </details>
+            
 ###### Node: programs above depend on ```lcsHelperFunc.py```
 
 DEPENDS ON: lcs_helper.py ( HELPER CLASS )
