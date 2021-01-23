@@ -13,10 +13,14 @@
  ```((A-B)^(C|(!A)))>A)```
 #### Programs available
 * ```checkWFF``` - checks if the given formula is a well formed formula 
-<details>
-<summary>Click here to see the output</summary>
-![Imgur Image](https://i.imgur.com/o3q3zQH.png)
-</details>
+    
+    - <details>
+
+      <summary>Click here to see the output</summary>
+
+      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+
+      </details>
       
 * ```interpTruth``` - computes truth value of WFF under a specific interpretation
 
