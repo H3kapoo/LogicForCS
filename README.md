@@ -115,27 +115,20 @@
 ```Negation``` : ```!``` <br/>
 ### Atoms
  ```Atoms available``` : ```[a-z] & [A-Z]``` <br/>
-### Input examples
+### Input examples (clause set)
 ```A,B``` <br/>
 ```!A,B``` <br/>
 ```!B``` <br/>
 ```A,B``` <br/>
 
-DEPENDS ON: lcs_helper.py ( HELPER CLASS )
-  - lcs.py  <=> CHECK IF A FORMULA IS A WFF
-  - lcs2.py  <=> GET TRUTH VALUE OF A WFF UNDER A SPECIFIC INTERPRETATION
-  - lcs3.py  <=> INTERPRETATION UNDER ALL TRUTH VALUES AND VALIDITY CHECK OF A WFF
-  - lcs3_1.py <=> INTERPRETATION UNDER ALL TRUTH VALUES OF A WFF (TABLE VIEW)
-  - lcs4.py <=> INTERPRETATION UNDER ALL TRUTH VALUES OF ALL SUBFORMULAS OF A WFF
- 
-DEPENDS ON: rel_helper.py ( HELPER CLASS )
-  - rel.py <=> CONVERTS A FORMULA FROM RELAXED FORM TO STRONG FORM
- 
-DEPENDS ON: re.py ( HELPER CLASS )
-  - n.py <=> CONVERTS A RELAXED/STRONG FORM FORMULA TO NNF
+* ```satOrUnsat``` - check if a clause set if Satifsiable or Unsatisfiable
+    
+    - <details>
 
-DEPENDS ON: n.py ( HELPER CLASS )
-  - c.py <=> CONVERTS A NNF FORMULA TO CNF
- 
- DEPENDS ON: nothing
-  - cls.py <=> CHECKS IF A CLAUSE SET IF SAT OR UNSAT ( where clauses are in the form: A,B,!B  etc )
+      <summary>Example output here</summary>
+
+      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+
+      </details>
+      
+
