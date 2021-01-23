@@ -121,6 +121,7 @@
 ```!B``` <br/>
 ```A,B``` <br/>
 
+### Programs available
 * ```satOrUnsat``` - check if a clause set if Satifsiable or Unsatisfiable
     
     - <details>
