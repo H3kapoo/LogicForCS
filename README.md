@@ -5,7 +5,8 @@
 3. ```Or``` : ```|``` <br/>
 4. ```Implication``` : ```>``` <br/>
 5. ```Equivalence``` : ```-```  <br/>
-6. ```Atoms possible``` : ```[a-z] & [A-Z]``` <br/>
+### Atoms
+ ```Atoms available``` : ```[a-z] & [A-Z]``` <br/>
 ### Input examples
 ###### Node: an additional pair of ( ) is required to enclose the original formula
  ```(A|B)``` <br/>
@@ -69,7 +70,8 @@
 3. ```Or``` : ```|``` <br/>
 4. ```Implication``` : ```>``` <br/>
 5. ```Equivalence``` : ```-```  <br/>
-6. ```Atoms possible``` : ```[a-z] & [A-Z]``` <br/>
+### Atoms
+ ```Atoms available``` : ```[a-z] & [A-Z]``` <br/>
 ### Input examples
  ```A|B```  <br/>
  ```A>B|(!C)``` <br/>
