@@ -110,7 +110,16 @@
       
 ###### Node: programs above depend on ```relHelperFunc.py```
 
-
+# Clauses
+### Connectives
+```Negation``` : ```!``` <br/>
+### Atoms
+ ```Atoms available``` : ```[a-z] & [A-Z]``` <br/>
+### Input examples
+```A,B``` <br/>
+```!A,B``` <br/>
+```!B``` <br/>
+```A,B``` <br/>
 
 DEPENDS ON: lcs_helper.py ( HELPER CLASS )
   - lcs.py  <=> CHECK IF A FORMULA IS A WFF
