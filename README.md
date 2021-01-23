@@ -1,5 +1,18 @@
-# LogicForCS
+# Description
 Programs for solving LCS problems
+
+# Well Formed Formulae
+### Connectors
+1. ```Negation``` : ```!``` <br/>
+2. ```And``` : ```^``` <br/>
+3. ```Or``` : ```|``` <br/>
+4. ```Implication``` : ```>``` <br/>
+5. ```Equivalence``` : ```-```  <br/>
+6. ```Atoms possible``` : ```[a-z] & [A-Z]``` <br/>
+### Input examples
+>>> ```(A|B)``` <br/>
+>>> ```((A>B)|(!C))```
+### Check if a formula is WFF
 
 DEPENDS ON: lcs_helper.py ( HELPER CLASS )
   - lcs.py  <=> CHECK IF A FORMULA IS A WFF
