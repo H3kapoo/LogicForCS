@@ -13,7 +13,6 @@
  ```((A-B)^(C|(!A)))>A)```
 #### Programs available
 * ```checkWFF``` - checks if the given formula is a well formed formula 
-    
     - <details>
 
       <summary>Example output here</summary>
@@ -21,7 +20,7 @@
       ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
 
       </details>
-      
+     
 * ```interpTruth``` - computes truth value of WFF under a specific interpretation
     
     - <details>
@@ -62,6 +61,53 @@
       </details>
             
 ###### Node: programs above depend on ```lcsHelperFunc.py```
+
+# WFF Relaxation
+### Connectors
+1. ```Negation``` : ```!``` <br/>
+2. ```And``` : ```^``` <br/>
+3. ```Or``` : ```|``` <br/>
+4. ```Implication``` : ```>``` <br/>
+5. ```Equivalence``` : ```-```  <br/>
+6. ```Atoms possible``` : ```[a-z] & [A-Z]``` <br/>
+### Input examples
+ ```A|B```  <br/>
+ ```A>B|(!C)``` <br/>
+ ```(A-B)^(C|!A))>A```
+#### Programs available
+* ```relaxedToStrong``` - convert a formula from relaxed form to strong from
+    
+    - <details>
+
+      <summary>Example output here</summary>
+
+      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+
+      </details>
+      
+* ```convertToNNF``` - convert formula to Negation Normal Form (NNF)
+    
+    - <details>
+
+      <summary>Example output here</summary>
+
+      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+
+      </details>
+      
+* ```convertToCNF``` - convert formula to Conjunctive Normal Form (CNF)
+    
+    - <details>
+
+      <summary>Example output here</summary>
+
+      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+
+      </details>
+      
+###### Node: programs above depend on ```relHelperFunc.py```
+
+
 
 DEPENDS ON: lcs_helper.py ( HELPER CLASS )
   - lcs.py  <=> CHECK IF A FORMULA IS A WFF
