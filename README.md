@@ -84,7 +84,7 @@
 
       <summary>Example output here</summary>
 
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+      ![Imgur Image](https://i.imgur.com/6k3h4R4.png)
 
       </details>
       
@@ -94,7 +94,7 @@
 
       <summary>Example output here</summary>
 
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+      ![Imgur Image](https://i.imgur.com/DAAVw45.png)
 
       </details>
       
@@ -104,7 +104,7 @@
 
       <summary>Example output here</summary>
 
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+      ![Imgur Image](https://i.imgur.com/AeP4p5g.png)
 
       </details>
       
