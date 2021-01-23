@@ -131,7 +131,7 @@
       ![Imgur Image](https://i.imgur.com/6yAG0Q9.png)
 
       </details>
- ### Output explication
+ ### Understanding the output
  Clause set if unsatisfiable because we have generated an empty clause ```[]``` somehow.In this case, clause ```[A,B] 0``` and ```[!A,B] 1``` generated clause ```[B] 4``` and then clause ```[!B] 2``` and clause ```[B] 4``` generated ```[] 7```.Thus the clause set is unsatisfiable.
       
 # Disclaimer
