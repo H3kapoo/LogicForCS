@@ -1,6 +1,3 @@
-# Description
-Programs for solving LCS problems
-
 # Well Formed Formulae
 ### Connectors
 1. ```Negation``` : ```!``` <br/>
@@ -10,9 +7,17 @@ Programs for solving LCS problems
 5. ```Equivalence``` : ```-```  <br/>
 6. ```Atoms possible``` : ```[a-z] & [A-Z]``` <br/>
 ### Input examples
->>> ```(A|B)``` <br/>
->>> ```((A>B)|(!C))```
-### Check if a formula is WFF
+###### Node: an additional pair of ( ) is required to enclose the original formula
+ ```(A|B)``` <br/>
+ ```((A>B)|(!C))``` <br/>
+ ```((A-B)^(C|(!A)))>A)```
+#### Programs available
+* ```checkWFF``` - checks if the given formula is a well formed formula
+* ```interpTruth``` - computes truth value of WFF under a specific interpretation
+* ```interpsAndValidity``` - computes truth value of WFF under all interpretations & validity of WFF
+* ```interpsAndValidity2``` - same as ```interpsAndValidity``` but table view
+* ```subfInterpsAndValidity``` - computes interpretation for all truth values of all subformulas of a WFF
+###### Node: programs above depend on ```lcsHelperFunc.py```
 
 DEPENDS ON: lcs_helper.py ( HELPER CLASS )
   - lcs.py  <=> CHECK IF A FORMULA IS A WFF
