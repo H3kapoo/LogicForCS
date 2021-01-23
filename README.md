@@ -73,7 +73,8 @@
 ### Input examples
  ```A|B```  <br/>
  ```A>B|(!C)``` <br/>
- ```(A-B)^(C|!A))>A```
+ ```(A-B)^(C|!A))>A``` <br/>
+ ```A>B|C^D```
 #### Programs available
 * ```relaxedToStrong``` - convert a formula from relaxed form to strong from
     
