@@ -1,5 +1,5 @@
 # Well Formed Formulae
-### Connectors
+### Connectives
 1. ```Negation``` : ```!``` <br/>
 2. ```And``` : ```^``` <br/>
 3. ```Or``` : ```|``` <br/>
@@ -63,7 +63,7 @@
 ###### Node: programs above depend on ```lcsHelperFunc.py```
 
 # WFF Relaxation
-### Connectors
+### Connectives
 1. ```Negation``` : ```!``` <br/>
 2. ```And``` : ```^``` <br/>
 3. ```Or``` : ```|``` <br/>
