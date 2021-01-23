@@ -128,8 +128,16 @@
 
       <summary>Example output here</summary>
 
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+      ![Imgur Image](https://i.imgur.com/6yAG0Q9.png)
 
       </details>
       
+# Disclaimer
+1.Some programs do not show explicit steps
+2.Some programs might give a different output from yours due to the non deterministic nature of the exercise.
+3.There might be some minor bugs in the code and the output generated might be wrong.However,a very large number of test cases passed with the expected correct output.
+
+
+
+
 
