@@ -18,7 +18,7 @@
 
       <summary>Example output here</summary>
 
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+      ![Imgur Image](https://i.imgur.com/K0cbrfM.png)
 
       </details>
      
@@ -28,7 +28,7 @@
 
       <summary>Example output here</summary>
 
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+      ![Imgur Image](https://i.imgur.com/4QWfU8z.png)
 
       </details>
       
@@ -37,7 +37,7 @@
 
       <summary>Example output here</summary>
 
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+      ![Imgur Image](https://i.imgur.com/uxbQIJp.png)
 
       </details>
       
@@ -47,7 +47,7 @@
 
       <summary>Example output here</summary>
 
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+      ![Imgur Image](https://i.imgur.com/iOYtIF4.png)
 
       </details>
       
@@ -57,7 +57,7 @@
 
       <summary>Example output here</summary>
 
-      ![Imgur Image](https://i.imgur.com/o3q3zQH.png)
+      ![Imgur Image](https://i.imgur.com/8CfI9gb.png)
 
       </details>
             
